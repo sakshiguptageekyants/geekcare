@@ -18,17 +18,32 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 /*carousel*/
+const prevArrow = document.querySelector('.prev');
+const nextArrow = document.querySelector('.next');
+const radioInputs = document.querySelectorAll('input[type="radio"]');
 
-var imgList = document.getElementById('imgList');
-  var scrollRight = document.getElementById('scroll-right');
-  var scrollLeft = document.getElementById('scroll-left');
-
-// When a user clicks on the right arrow, the ul will scroll 750px to the right
-  scrollRight.addEventListener('click', (event) => {
-    imgList.scrollBy(750, 0);
+prevArrow.addEventListener('click', () => {
+  const checkedIndex = Array.from(radioInputs).findIndex(input => input.checked);
+  const prevIndex = (checkedIndex - 1 + radioInputs.length) % radioInputs.length;
+  radioInputs[prevIndex].checked = true;
 });
 
-// When a user clicks on the left arrow, the ul will scroll 750px to the left
-  scrollLeft.addEventListener('click', (event) => {
-    imgList.scrollBy(-750, 0);
+nextArrow.addEventListener('click', () => {
+  const checkedIndex = Array.from(radioInputs).findIndex(input => input.checked);
+  const nextIndex = (checkedIndex + 1) % radioInputs.length;
+  radioInputs[nextIndex].checked = true;
 });
+
+// var imgList = document.getElementById('imgList');
+//   var scrollRight = document.getElementById('scroll-right');
+//   var scrollLeft = document.getElementById('scroll-left');
+
+// // When a user clicks on the right arrow, the ul will scroll 750px to the right
+//   scrollRight.addEventListener('click', (event) => {
+//     imgList.scrollBy(750, 0);
+// });
+
+// // When a user clicks on the left arrow, the ul will scroll 750px to the left
+//   scrollLeft.addEventListener('click', (event) => {
+//     imgList.scrollBy(-750, 0);
+// });

@@ -5,6 +5,7 @@
     font-family: 'Inter', sans-serif;
 
 
+
 }
 
 .position-relative {
@@ -14,6 +15,7 @@
 .container {
     max-width: 1070px;
     margin: 0 auto;
+    padding: 0 15px;
 
 }
 
@@ -50,6 +52,11 @@ header {
     text-decoration: none;
     color: #000;
     font-size: 18px;
+}
+
+.logo a {
+    display: block;
+    height: fit-content;
 }
 
 .logo img {
@@ -106,7 +113,7 @@ header {
 
 .home-section {
 
-    background-image: url('images/hero-bg.png');
+    background-image: url('../images/hero-bg.png');
     position: relative;
     height: 800px;
     background-size: cover;
@@ -116,7 +123,7 @@ header {
 .home {
 
     position: relative;
-    
+
 
 }
 
@@ -126,7 +133,7 @@ header {
     right: 0;
     height: 586px;
     top: 100px;
-    right: -20%;
+    right: -19%;
 
 
 
@@ -165,7 +172,7 @@ header {
 .home-left p {
     max-width: 460px;
     width: 100%;
-    color: #302426;
+    color: #333;
     font-size: 18px;
     padding: 14px 0 28px 0;
 
@@ -302,12 +309,13 @@ header {
     padding: 64px 0;
 }
 
-.about-header p {
+.about-header h2 {
     max-width: 452px;
     color: #302426;
     font-family: Inter;
     font-size: 46px;
     margin-left: 22px;
+    font-weight: 500;
 }
 
 .about-header span {
@@ -349,7 +357,8 @@ header {
     background: #F9F9F9;
 
 }
-.features-left-image{
+
+.features-left-image {
     position: relative;
     left: -14%;
     width: 64%;
@@ -432,6 +441,10 @@ header {
     margin-right: 28px;
 }
 
+.role-card-text-section {
+    color: #333;
+}
+
 
 .image1 {
     background: #56C58D;
@@ -466,7 +479,7 @@ header {
 .tech-stack {
 
     background: #F54061;
-    background-image: url('images/Feather-bg.png');
+    background-image: url('../images/Feather-bg.png');
     background-size: cover;
     background-position: center;
 
@@ -526,7 +539,8 @@ header {
 }
 
 .screen {
-    padding: 70px 0;
+    padding-top: 70px;
+    padding-bottom: 100px;
 
 
 }
@@ -569,90 +583,197 @@ header {
 } */
 
 /*carousel*/
-section {
-    text-align: center;
-    margin-top: 2.5%;
-}
 
-.scroll-arrow {
-    /* width: 10%; */
-    display: inline-block;
+.arrow {
     position: relative;
-    vertical-align: middle;
+    bottom: -98px;
+    left: 45%;
+    transform: translateY(-50%);
     cursor: pointer;
-    /* padding: 0; */
+    z-index: 10;
+    padding: 15px 14px 13px 14px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 0;
     opacity: 0.5;
     /* font-size: 34px; */
     transition: 0.2s;
 }
 
-.scroll-arrow:hover {
+.arrow:hover {
     transition: 0.2s;
     opacity: 1;
 }
 
-.carousel ul {
-    width: 100%;
-    scroll-behavior: smooth;
-    display: inline-block;
-    position: relative;
-    vertical-align: middle;
-    text-align: center;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    white-space: nowrap;
-    -webkit-overflow-scrolling: touch;
-}
+.prev {
 
-.carousel ul::-webkit-scrollbar {
-    display: none;
-}
 
-.carousel li {
-    list-style: none;
-    display: inline-block;
-    position: relative;
-    vertical-align: middle;
-    width: 20%;
-    margin-left: 1.5%;
-    margin-right: 1.5%;
-    filter: grayscale(100%);
-    transition: 0.2s;
-}
-
-.carousel li,
-#imgList img {
-    width: 500px;
-}
-
-.carousel li:hover {
-    transition: 0.2s;
-    filter: grayscale(0);
-}
-
-.navigation {
-    margin-top: 50px;
-}
-
-#scroll-left {
-    padding: 14px;
+    background-size: cover;
     background: #F1F1F1;
-    border-radius: 100%;
-
+    ;
 }
 
-#scroll-right {
-    padding: 14px;
-    background: #F54061;
-    border-radius: 100%;
-}
-
-#scroll-left img,
-#scroll-right img {
-    width: 24px;
+.prev img,
+.next img {
     height: 24px;
+    width: 24px;
+}
 
+.next {
+
+    background-size: cover;
+    background: #F54061;
+}
+
+
+#slider {
+    position: relative;
+    width: 628px;
+    height: 528px;
+    margin: 0 auto;
+    font-family: 'Inter', sans-serif;
+    perspective: 1400px;
+    transform-style: preserve-3d;
+}
+
+input[type=radio] {
+    position: relative;
+    top: 107%;
+    left: 50%;
+    width: 18px;
+    height: 18px;
+    margin: 0 15px 0 0;
+    opacity: 0.2;
+    transform: translateX(-83px);
+    cursor: pointer;
+    background-color: #ccc
+}
+
+
+input[type=radio]:nth-child(5) {
+    margin-right: 0px;
+}
+
+input[type=radio]:checked {
+    opacity: 1;
+
+}
+
+input[type=radio]::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 18px;
+    /* Adjust this value as needed */
+    height: 18px;
+    /* Adjust this value as needed */
+    border-radius: 100%;
+    background-color: #ccc;
+    /* Checkbox background color */
+}
+
+/* Style the custom checkbox when checked */
+input[type=radio]::before {
+    background-color: #F54061;
+    /* Checked checkbox background color */
+}
+
+input[type=radio]::after {
+    content: " ";
+    /* Checkmark symbol */
+    position: absolute;
+    left: 4px;
+    /* Adjust this value to align the checkmark */
+    top: 1px;
+    /* Adjust this value to align the checkmark */
+    color: white;
+    /* Checkmark color */
+    visibility: hidden;
+}
+
+/* Show the checkmark when the checkbox is checked */
+input[type=radio] input[type="checkbox"]:checked+input[type=radio]::before+input[type=radio]::after {
+    visibility: visible;
+}
+
+
+
+
+
+#slider label,
+#slider label img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    color: white;
+    font-size: 70px;
+    font-weight: bold;
+    border-radius: 3px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 400ms ease;
+}
+
+
+
+/* Slider Functionality */
+
+/* Active Slide */
+#s1:checked~#slide1,
+#s2:checked~#slide2,
+#s3:checked~#slide3,
+#s4:checked~#slide4,
+#s5:checked~#slide5 {
+    /* box-shadow: 0 13px 26px rgba(0,0,0, 0.3), 0 12px 6px rgba(0,0,0, 0.2); */
+    transform: translate3d(0%, 0, 0px);
+}
+
+/* Next Slide */
+#s1:checked~#slide2,
+#s2:checked~#slide3,
+#s3:checked~#slide4,
+#s4:checked~#slide5,
+#s5:checked~#slide1 {
+    /* box-shadow: 0 6px 10px rgba(0,0,0, 0.3), 0 2px 2px rgba(0,0,0, 0.2); */
+    transform: translate3d(20%, 0, -100px);
+}
+
+
+/* Next to Next Slide */
+#s1:checked~#slide3,
+#s2:checked~#slide4,
+#s3:checked~#slide5,
+#s4:checked~#slide1,
+#s5:checked~#slide2 {
+    /* box-shadow: 0 1px 4px rgba(0,0,0, 0.4); */
+    transform: translate3d(40%, 0, -250px);
+}
+
+/* Previous to Previous Slide */
+#s1:checked~#slide4,
+#s2:checked~#slide5,
+#s3:checked~#slide1,
+#s4:checked~#slide2,
+#s5:checked~#slide3 {
+    /* box-shadow: 0 1px 4px rgba(0,0,0, 0.4); */
+    transform: translate3d(-40%, 0, -250px);
+}
+
+/* Previous Slide */
+#s1:checked~#slide5,
+#s2:checked~#slide1,
+#s3:checked~#slide2,
+#s4:checked~#slide3,
+#s5:checked~#slide4 {
+    /* box-shadow: 0 6px 10px rgba(0,0,0, 0.3), 0 2px 2px rgba(0,0,0, 0.2); */
+    transform: translate3d(-20%, 0, -100px);
 }
 
 
@@ -775,11 +896,17 @@ section {
         display: none;
     }
 
-    
+
 
 }
 
-@media (max-width: 982px) {}
+@media (max-width: 982px) {
+    #slider {
+        height: 400px;
+    width: 500px;
+    perspective: 900px;
+    }
+}
 
 @media (max-width:767px) {
 
@@ -791,6 +918,11 @@ section {
     /* .screen {
         display: none;
     } */
+    #slider {
+        height: 250px;
+        width: 300px;
+        perspective: 700px;
+    }
 
 }
 
@@ -816,6 +948,12 @@ section {
     .carousel li,
     #imgList img {
         width: 300px;
+    }
+    .arrow{
+        left: 38%;
+    }
+    #slider{
+        perspective: 680px;
     }
 
 
@@ -849,6 +987,14 @@ section {
     .carousel li,
     #imgList img {
         width: 250px;
+    }
+    #slider {
+        height: 200px;
+        width: 250px;
+        perspective: 400px;
+    }
+    .arrow{
+        left: 32%;
     }
 
 }
